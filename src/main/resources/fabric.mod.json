@@ -1,0 +1,37 @@
+{
+    "schemaVersion": 1,
+    "id": "${mod_id}",
+    "version": "${mod_version}",
+    "name": "${mod_name}",
+    "description": "I'm a template mod!",
+    "authors": [
+        "Template Author"
+    ],
+    "contributors": [
+        "Template Contributor"
+    ],
+    "contact": {
+        "homepage": "...",
+        "issues": "...",
+        "sources": "..."
+    },
+    "license": "LGPL-3.0-or-later",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            {
+                "adapter": "kotlin",
+                "value": "dev.deftu.modtemplate.ModTemplate"
+            }
+        ]
+    },
+    "mixins": [
+        "${mod_id}.mixins.json"
+    ],
+    "depends": {
+        "fabric": "*",
+        "fabricloader": ">=0.15.11",
+        "fabric-language-kotlin": "*",
+        "minecraft": "~${minor_mc_version}"
+    }
+}
