@@ -21,7 +21,7 @@
         "main": [
             {
                 "adapter": "kotlin",
-                "value": "dev.deftu.modtemplate.ModTemplate"
+                "value": "dev.deftu.modtemplate.entrypoint.ModTemplateEntrypoint"
             }
         ]
     },
