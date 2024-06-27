@@ -12,6 +12,10 @@ plugins {
 }
 
 toolkitLoomHelper {
+    if (!mcData.isNeoForge) {
+        useMixinRefMap(modData.id)
+    }
+
     if (mcData.isForgeLike && mcData.version >= MinecraftVersion.VERSION_1_16_5) {
         useKotlinForForge()
     }
