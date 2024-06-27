@@ -1,15 +1,15 @@
 package dev.deftu.modtemplate.entrypoint
 
 //#if FABRIC
+import net.fabricmc.api.ModInitializer
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.api.DedicatedServerModInitializer
-import net.fabricmc.api.ModInitializer
 //#elseif FORGE
-//#if MC >= 1.15.2
+//#if MC >= 1.16.5
 //$$ import net.minecraftforge.eventbus.api.IEventBus
 //$$ import net.minecraftforge.fml.common.Mod
-//$$ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 //$$ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
+//$$ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 //$$ import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent
 //$$ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
 //#else
@@ -20,8 +20,8 @@ import net.fabricmc.api.ModInitializer
 //#elseif NEOFORGE
 //$$ import net.neoforged.bus.api.IEventBus
 //$$ import net.neoforged.fml.common.Mod
-//$$ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent
 //$$ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent
+//$$ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent
 //$$ import net.neoforged.fml.event.lifecycle.FMLDedicatedServerSetupEvent
 //#endif
 
@@ -31,19 +31,19 @@ import dev.deftu.modtemplate.server.ModTemplateServer
 
 //#if FORGE-LIKE
 //$$ import dev.deftu.modtemplate.ModTemplateConstants
-//#if MC >= 1.15.2
+//#if MC >= 1.16.5
 //$$ @Mod(ModTemplateConstants.ID)
 //#else
-//$$ @Mod(modid = ModTemplateConstants.ID)
+//$$ @Mod(modid = ModTemplateConstants.ID, version = ModTemplateConstants.VERSION)
 //#endif
 //#endif
-object ModTemplateEntrypoint
+class ModTemplateEntrypoint
     //#if FABRIC
     : ModInitializer, ClientModInitializer, DedicatedServerModInitializer
     //#endif
 {
 
-    //#if FORGE && MC >= 1.15.2
+    //#if FORGE && MC >= 1.16.5
     //$$ init {
     //$$     setupForgeEvents(FMLJavaModLoadingContext.get().modEventBus)
     //$$ }
@@ -58,7 +58,7 @@ object ModTemplateEntrypoint
     //#endif
     fun onInitialize(
         //#if FORGE-LIKE
-        //#if MC >= 1.15.2
+        //#if MC >= 1.16.5
         //$$ event: FMLCommonSetupEvent
         //#else
         //$$ event: FMLInitializationEvent
@@ -73,7 +73,7 @@ object ModTemplateEntrypoint
     //#endif
     fun onInitializeClient(
         //#if FORGE-LIKE
-        //#if MC >= 1.15.2
+        //#if MC >= 1.16.5
         //$$ event: FMLClientSetupEvent
         //#else
         //$$ event: FMLInitializationEvent
@@ -92,7 +92,7 @@ object ModTemplateEntrypoint
     //#endif
     fun onInitializeServer(
         //#if FORGE-LIKE
-        //#if MC >= 1.15.2
+        //#if MC >= 1.16.5
         //$$ event: FMLDedicatedServerSetupEvent
         //#else
         //$$ event: FMLInitializationEvent
@@ -106,7 +106,7 @@ object ModTemplateEntrypoint
         ModTemplateServer.onInitializeServer()
     }
 
-    //#if FORGE-LIKE && MC >= 1.15.2
+    //#if FORGE-LIKE && MC >= 1.16.5
     //$$ fun setupForgeEvents(modEventBus: IEventBus) {
     //$$     modEventBus.addListener(this::onInitialize)
     //$$     modEventBus.addListener(this::onInitializeClient)
