@@ -23,3 +23,17 @@ license="LGPL-3.0-or-later"
     versionRange="[${minor_mc_version}]"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="textile"
+    mandatory=true
+    versionRange="*"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="omnicore"
+    mandatory=true
+    versionRange="*"
+    ordering="NONE"
+    side="BOTH"
