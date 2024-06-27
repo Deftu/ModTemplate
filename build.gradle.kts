@@ -16,6 +16,11 @@ toolkitLoomHelper {
         useMixinRefMap(modData.id)
     }
 
+    if (mcData.isForge) {
+        useTweaker("org.spongepowered.asm.launch.MixinTweaker")
+        useForgeMixin(modData.id)
+    }
+
     if (mcData.isForgeLike && mcData.version >= MinecraftVersion.VERSION_1_16_5) {
         useKotlinForForge()
     }
