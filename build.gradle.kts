@@ -11,8 +11,10 @@ plugins {
     id("dev.deftu.gradle.tools.minecraft.releases")
 }
 
-if (mcData.isForgeLike && mcData.version >= MinecraftVersion.VERSION_1_15_2) {
-    toolkitLoomHelper.useKotlinForForge()
+toolkitLoomHelper {
+    if (mcData.isForgeLike && mcData.version >= MinecraftVersion.VERSION_1_16_5) {
+        useKotlinForForge()
+    }
 }
 
 dependencies {
@@ -22,5 +24,13 @@ dependencies {
     if (mcData.isFabric) {
         modImplementation("net.fabricmc.fabric-api:fabric-api:${mcData.dependencies.fabric.fabricApiVersion}")
         modImplementation("net.fabricmc:fabric-language-kotlin:${mcData.dependencies.fabric.fabricLanguageKotlinVersion}")
+    }
+}
+
+tasks {
+    withType<Jar> {
+        val buildDir = rootProject.layout.buildDirectory.asFile.get()
+        val jarsDir = buildDir.resolve("jars")
+        destinationDirectory.set(jarsDir)
     }
 }
