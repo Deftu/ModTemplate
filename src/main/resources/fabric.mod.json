@@ -5,10 +5,7 @@
     "name": "${mod_name}",
     "description": "${mod_description}",
     "authors": [
-        "Template Author"
-    ],
-    "contributors": [
-        "Template Contributor"
+        "Deftu"
     ],
     "contact": {
         "homepage": "...",
