@@ -25,9 +25,11 @@
         "${mod_id}.mixins.json"
     ],
     "depends": {
+        "minecraft": "~${minor_mc_version}",
         "fabric": "*",
         "fabricloader": ">=0.15.11",
         "fabric-language-kotlin": "*",
-        "minecraft": "~${minor_mc_version}"
+        "textile": "*",
+        "omnicore": "*"
     }
 }
