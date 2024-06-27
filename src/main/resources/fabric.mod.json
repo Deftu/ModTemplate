@@ -22,7 +22,7 @@
         ]
     },
     "mixins": [
-        "${mod_id}.mixins.json"
+        "mixins.${mod_id}.json"
     ],
     "depends": {
         "minecraft": "~${minor_mc_version}",
