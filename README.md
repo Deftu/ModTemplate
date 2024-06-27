@@ -14,7 +14,7 @@ A very barebones mod template for creating Minecraft mods for versions 1.8.9 - 1
 1. Clone the repository.
 2. Open the project in IntelliJ IDEA.
 3. Modify the project metadata in `gradle.properties`.
-4. Set up the versions/loaders you want to support in `settings.gradle.kts`.
+4. Set up the versions/loaders you want to support in `settings.gradle.kts` and `root.gradle.kts`.
 5. Configure dependencies and additional setup in `build.gradle.kts`.
 6. Rename the package and classes as desired. Be sure to update preprocessed imports too!
 7. Start coding!
