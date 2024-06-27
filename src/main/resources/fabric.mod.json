@@ -3,7 +3,7 @@
     "id": "${mod_id}",
     "version": "${mod_version}",
     "name": "${mod_name}",
-    "description": "I'm a template mod!",
+    "description": "${mod_description}",
     "authors": [
         "Template Author"
     ],
