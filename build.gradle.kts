@@ -13,6 +13,10 @@ plugins {
     id("dev.deftu.gradle.tools.minecraft.releases")
 }
 
+toolkitMultiversion {
+    moveBuildsToRootProject.set(true)
+}
+
 toolkitLoomHelper {
     if (!mcData.isNeoForge) {
         useMixinRefMap(modData.id)
@@ -29,8 +33,10 @@ toolkitLoomHelper {
 }
 
 dependencies {
-    modImplementation("dev.deftu:textile-$mcData:0.3.1")
-    modImplementation("dev.deftu:omnicore-$mcData:0.5.0")
+    val textileVersion = "0.3.1"
+    val omnicoreVersion = "0.6.0"
+    modImplementation("dev.deftu:textile-$mcData:$textileVersion")
+    modImplementation("dev.deftu:omnicore-$mcData:$omnicoreVersion")
 
     if (mcData.isFabric) {
         modImplementation("net.fabricmc.fabric-api:fabric-api:${mcData.dependencies.fabric.fabricApiVersion}")
@@ -40,13 +46,19 @@ dependencies {
         implementation(includeOrShade("org.jetbrains.kotlin:kotlin-reflect:1.6.10")!!)
 
         modImplementation(includeOrShade("org.spongepowered:mixin:0.7.11-SNAPSHOT")!!)
+
+        includeOrShade("dev.deftu:textile-$mcData:$textileVersion")
+        includeOrShade("dev.deftu:omnicore-$mcData:$omnicoreVersion")
     }
 }
 
 tasks {
-    withType<Jar> {
-        val buildDir = rootProject.layout.buildDirectory.asFile.get()
-        val jarsDir = buildDir.resolve("jars")
-        destinationDirectory.set(jarsDir)
+
+    fatJar {
+        if (mcData.isLegacyForge) {
+            relocate("dev.deftu.textile", "dev.deftu.favorita.textile")
+            relocate("dev.deftu.omnicore", "dev.deftu.favorita.omnicore")
+        }
     }
+
 }
