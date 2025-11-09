@@ -9,7 +9,9 @@ on:
       - 'README'
       - 'README.md'
       - 'LICENSE'
+      - 'LICENSE-TEMPLATE'
       - 'LICENSE.md'
+      - 'LICENSE-TEMPLATE.md'
 
 concurrency:
   group: '${{ github.workflow }}-${{ github.head_ref }}'
