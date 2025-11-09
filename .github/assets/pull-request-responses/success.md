@@ -2,8 +2,8 @@
 
 ## 🟢 Successfully built artifacts!
 
-| Name     | Link          |
-|----------|---------------|
-| Commit   | {{ .commit }} |
-| Logs     | {{ .logs      | "View logs" }}       |
-| Download | {{ .download  | mdlink "Download" }} |
+| Name    | Link                                 |
+|---------|--------------------------------------|
+| Commit  | {{ .commit }}                        |
+| Logs    | {{ .logs | mdlink "View logs" }}       |
+| Download| {{ .download | mdlink "Download" }}    |
