@@ -1,9 +1,19 @@
-name: Build
+name: Build with Gradle
 
 on:
   push:
     branches:
-      - '*'
+      - '**'
+    paths-ignore:
+      - 'README'
+      - 'README.md'
+      - 'LICENSE'
+      - 'LICENSE-TEMPLATE'
+      - 'LICENSE.md'
+      - 'LICENSE-TEMPLATE.md'
+  pull_request:
+    branches:
+      - '**'
     paths-ignore:
       - 'README'
       - 'README.md'
@@ -16,7 +26,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Build and test with gradle
+    name: Build Project
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
