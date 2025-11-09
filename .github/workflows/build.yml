@@ -22,7 +22,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Build and test with gradle\
+    name: Build and test with gradle
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
