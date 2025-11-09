@@ -77,9 +77,8 @@ dependencies {
 tasks {
     fatJar {
         if (mcData.isLegacyForge) {
-            // TODO
-            relocate("dev.deftu.textile", "textile")
-            relocate("dev.deftu.omnicore", "omnicore")
+            relocate("dev.deftu.textile", "${modData.group}.dependencies.textile")
+            relocate("dev.deftu.omnicore", "${modData.group}.dependencies.omnicore")
         }
     }
 }
