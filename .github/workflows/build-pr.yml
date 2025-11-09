@@ -65,6 +65,7 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
+        id: upload-artifact
         with:
           name: Artifacts
           path: |
@@ -78,10 +79,9 @@ jobs:
         with:
           template: './.github/assets/pull-request-responses/success.md'
           vars: |
-            commit: ${{ env.HEAD_SHA }}
-            logs: ${{ env.JOB_PATH }}
-            download: ${{ env.ARTIFACT_URL }}
-            expire: ${{ env.ARTIFACT_EXPIRE_DATE }}
+            commit: ${{ github.event.pull_request.head.sha }}
+            logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            download: ${{ steps.upload-artifact.outputs.artifact-url }}
 
       - name: Update comment with build results
         uses: peter-evans/create-or-update-comment@v5
