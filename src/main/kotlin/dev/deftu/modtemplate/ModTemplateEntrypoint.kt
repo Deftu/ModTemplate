@@ -86,7 +86,7 @@ class ModTemplateEntrypoint
         //#endif
         //#endif
     ) {
-        //#if MC <= 1.12.2
+        //#if FORGE && MC <= 1.12.2
         //$$ if (!event.side.isClient) {
         //$$     return
         //$$ }
@@ -109,7 +109,7 @@ class ModTemplateEntrypoint
         //#endif
         //#endif
     ) {
-        //#if MC <= 1.12.2
+        //#if FORGE && MC <= 1.12.2
         //$$ if (!event.side.isServer) {
         //$$     return
         //$$ }
