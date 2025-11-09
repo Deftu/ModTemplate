@@ -1,11 +1,9 @@
 package dev.deftu.modtemplate
 
 object ModTemplate {
-
     /**
-     * Initialize common (both client & server) logic here.
+     * Your common (client, integrated server & dedicated server) logic goes here...
      */
-    fun onInitializeCommon() {
+    fun initialize() {
     }
-
 }

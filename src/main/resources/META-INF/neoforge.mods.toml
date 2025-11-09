@@ -3,6 +3,9 @@ loaderVersion="[1,)"
 issueTrackerURL="https://github.com/Deftu/${mod_name}/issues"
 license="LGPL-3.0-or-later"
 
+[[mixins]]
+    config = "mixins.${mod_id}.json"
+
 [[mods]]
     modId="${mod_id}"
     version="${mod_version}"
@@ -13,7 +16,7 @@ license="LGPL-3.0-or-later"
 [[dependencies.${mod_id}]]
     modId="neoforge"
     mandatory=true
-    versionRange="[20.2,)"
+    versionRange="[1,)"
     ordering="NONE"
     side="BOTH"
 
