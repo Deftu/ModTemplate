@@ -34,6 +34,16 @@ toolkitLoomHelper {
     }
 }
 
+repositories {
+    maven("https://maven.deftu.dev/mirror") {
+        exclusiveContent {
+            filter {
+                includeGroup("com.terraformersmc") // Mod Menu
+            }
+        }
+    }
+}
+
 dependencies {
     // Add Textile and OmniCore
     with(libs.textile.get()) {
