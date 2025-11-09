@@ -68,7 +68,7 @@ dependencies {
     // Add Kotlin and Mixin in Legacy Forge
     if (mcData.version <= MinecraftVersions.VERSION_1_12_2) {
         implementation(includeOrShade(kotlin("stdlib-jdk8"))!!)
-        implementation(includeOrShade("org.jetbrains.kotlin:kotlin-reflect:1.6.10")!!)
+        implementation(includeOrShade("org.jetbrains.kotlin:kotlin-reflect:2.2.21")!!)
 
         modImplementation(includeOrShade("org.spongepowered:mixin:0.7.11-SNAPSHOT")!!)
     }
