@@ -11,14 +11,6 @@ on:
       - 'LICENSE-TEMPLATE'
       - 'LICENSE.md'
       - 'LICENSE-TEMPLATE.md'
-  pull_request:
-    branches:
-      - '**'
-    paths-ignore:
-      - 'README'
-      - 'README.md'
-      - 'LICENSE'
-      - 'LICENSE-TEMPLATE.md'
   workflow_dispatch:
 
 jobs:
