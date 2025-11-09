@@ -1,34 +1,32 @@
-## Eclipse ##
-eclipse
-bin
-*.launch
-.settings
-.metadata
-.classpath
-.project
-
 ## IntelliJ IDEA ##
-out
-classes
-*.ipr
-*.iws
-*.iml
-/.idea/*
-!/.idea/gradle.xml
+/.idea/
+/out/
+/classes/
+/*.iml
 
-## Netbeans ##
-.nb-gradle
-.nb-gradle-properties
+## Eclipse ##
+/eclipse/
+/bin/
+/*.launch
+/.settings/
+/.metadata
+/.classpath
+/.project
 
 ## VSCode ##
-.vscode
+/.vscode/
+
+## Netbeans ##
+/.nb-gradle/
+/.nb-gradle-properties/
 
 ## Gradle ##
-build
-.gradle
+**/build/
+**/.gradle/
 
 ## Other ##
-.kotlin
-run
-.DS_Store
+/.kotlin/
+**/run/
+/.DS_Store
 Thumbs.db
+*.log
