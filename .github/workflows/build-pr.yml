@@ -41,6 +41,14 @@ jobs:
           comment-author: 'github-actions[bot]'
           body-includes: '<!-- workflow comment -->'
 
+      - name: Render initial comment body
+        id: render-initial
+        uses: chuhlomin/render-template@v1.10
+        with:
+          template: './.github/assets/pull-request-responses/initial.md'
+          vars: |
+            build_url: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
       - name: Post or update initial comment
         uses: peter-evans/create-or-update-comment@v5
         id: comment-init
@@ -48,7 +56,7 @@ jobs:
           issue-number: ${{ github.event.pull_request.number }}
           comment-id: ${{ steps.find-comment.outputs.comment-id }}
           edit-mode: replace
-          body-path: '.github/assets/pull-request-responses/initial.md'
+          body: ${{ steps.render-initial.outputs.result }}
 
       - name: Set up JDK
         uses: actions/setup-java@v5
